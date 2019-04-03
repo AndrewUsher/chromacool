@@ -5,7 +5,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Open Sans';
     margin: 0;
     -webkit-font-smoothing: antialiased;
-	  -moz-osx-font-smoothing: grayscale;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1 {

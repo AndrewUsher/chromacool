@@ -28,6 +28,7 @@
     "typeface-open-sans": "^0.0.54"
   },
   "scripts": {
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "lint": "eslint --fix ./src"
   }
 }
