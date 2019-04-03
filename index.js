@@ -8,11 +8,12 @@ import { GlobalStyles } from './GlobalStyles'
 import { Colors } from './Colors'
 import { ColorsContainer } from './ColorsContainer'
 import { CopyConfirmation } from './CopyConfirmation'
+import { StyledThemeProvider } from './StyledThemeProvider'
 
 const Header = styled.header`
   background-color: #fff;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  padding: 20px 3vw;
+  padding: 20px ${props => props.theme.spacing.small};
 
   ${up('tablet')} {
     position: sticky;
@@ -36,17 +37,20 @@ const App = () => {
       .then(handleClipboardSuccess)
       .catch(e => console.log(`Error: ${e}`))
   }
+
   return (
-    <Fragment>
-      <GlobalStyles />
-      <Header>
-        <h1>Chromacool</h1>
-      </Header>
-      <ColorsContainer>
-        <Colors colors={colors} copyToClipboard={copyToClipboard} />
-      </ColorsContainer>
-      {confirmationStatus && <CopyConfirmation>Copied to clipboard 👍</CopyConfirmation>}
-    </Fragment>
+    <StyledThemeProvider>
+      <Fragment>
+        <GlobalStyles />
+        <Header>
+          <h1>Chromacool</h1>
+        </Header>
+        <ColorsContainer>
+          <Colors colors={colors} copyToClipboard={copyToClipboard} />
+        </ColorsContainer>
+        {confirmationStatus && <CopyConfirmation>Copied to clipboard 👍</CopyConfirmation>}
+      </Fragment>
+    </StyledThemeProvider>
   )
 }
 

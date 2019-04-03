@@ -20,15 +20,13 @@ const StyledCopyConfirmation = styled.div`
   padding: 10px 15px;
   position: sticky;
   bottom: 20px;
-  left: 3vw;
+  left: ${props => props.theme.spacing.small};
 
   @supports (width: max-content) {
     width: max-content;
   }
 `
 
-const CopyConfirmation = () => (
-  <StyledCopyConfirmation>Copied to clipboard 👍</StyledCopyConfirmation>
-)
+const CopyConfirmation = () => <StyledCopyConfirmation>Copied to clipboard 👍</StyledCopyConfirmation>
 
 export { CopyConfirmation }
