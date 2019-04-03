@@ -4,6 +4,7 @@ import { render } from 'react-dom'
 import styled from 'styled-components'
 import { up } from 'styled-breakpoints'
 import colors from './data.json'
+import { createCodeSnippet } from './utils'
 import { GlobalStyles } from './GlobalStyles'
 import { Colors } from './Colors'
 import { ColorsContainer } from './ColorsContainer'
@@ -30,10 +31,9 @@ const App = () => {
   }
 
   const copyToClipboard = (firstColor, secondColor) => _ => {
-    const codeTemplate = `background-image: linear-gradient(135deg, ${firstColor} 10%, ${secondColor} 100%);`
-    console.log(codeTemplate)
+    const codeSnippet = createCodeSnippet(firstColor, secondColor)
     navigator.clipboard
-      .writeText(codeTemplate)
+      .writeText(codeSnippet)
       .then(handleClipboardSuccess)
       .catch(e => console.log(`Error: ${e}`))
   }
