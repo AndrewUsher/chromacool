@@ -68,8 +68,8 @@ const Colors = ({ colors, copyToClipboard }) => (
 )
 
 Colors.propTypes = {
-  colors: PropTypes.arrayOf(PropTypes.string).isRequired,
-  copyToClipboard: PropTypes.a
+  colors: PropTypes.array.isRequired,
+  copyToClipboard: PropTypes.func.isRequired
 }
 
 export { Colors }
