@@ -45,7 +45,7 @@ const ColorGroupTextContainer = styled(Box)`
 `
 
 const TextWithColor = styled(Text)`
-  color: ${props => props.textColor};
+  color: #343434;
   font-size: 18px;
 `
 
@@ -59,8 +59,8 @@ const Colors = ({ colors, copyToClipboard }) => (
           </ColorOptions>
         </ColorImage>
         <ColorGroupTextContainer>
-          <TextWithColor textColor="#343434">{firstColor}</TextWithColor>
-          <TextWithColor textColor={secondColor}>{secondColor}</TextWithColor>
+          <TextWithColor>{firstColor}</TextWithColor>
+          <TextWithColor>{secondColor}</TextWithColor>
         </ColorGroupTextContainer>
       </ColorGroup>
     ))}
